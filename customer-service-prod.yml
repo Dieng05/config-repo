@@ -6,7 +6,7 @@ message: Hello from Prod!
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/cust_prod
+    url: jdbc:postgresql://localhost:5432/custumer_prod
     username: postgres
     password: passer123
     driver-class-name: org.postgresql.Driver

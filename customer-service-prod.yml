@@ -1,12 +1,14 @@
 global:
-  message: Welcome to customer service prod environment!!
+  message: "Welcome to customer service prod environment!!"
+
 server:
   port: 8083
-message: Hello from Prod!
+
+message: "Hello from Prod!"
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/custumer_prod
+    url: jdbc:postgresql://localhost:5432/customer_prod
     username: postgres
     password: passer123
     driver-class-name: org.postgresql.Driver
@@ -15,3 +17,19 @@ spring:
       ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+# Optional production-specific configurations
+logging:
+  level:
+    root: INFO
+    org.springframework: WARN
+    com.yourpackage: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always

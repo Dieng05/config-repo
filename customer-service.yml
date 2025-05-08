@@ -5,9 +5,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/customer_master
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: passer123
+    password: "passer123"
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: false
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

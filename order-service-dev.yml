@@ -1,14 +1,32 @@
 global:
-  message: Welcome to order service dev environment!!
+  message: "Welcome to order service dev environment!!"
+
 server:
   port: 8084
-message: Hello from Order Dev!
+
+message: "Hello from Order Dev!"
+
 spring:
+  application:
+    name: order-service
   datasource:
-     url: jdbc:h2:mem:order_master
-     username: root
-     password:
+    url: jdbc:h2:mem:order_master
+    username: root
+    password: ""  # Mot de passe vide mais explicitement déclaré
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: true
+
+# Configuration H2 Console (accès: http://localhost:8084/h2-console)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: false
